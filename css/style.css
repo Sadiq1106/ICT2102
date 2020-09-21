@@ -1741,7 +1741,7 @@ h3 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background: #040E27;
+  background: #2d2d2d;
   position: relative;
   z-index: 0;
 }
@@ -6684,22 +6684,20 @@ h6 {
 /*# sourceMappingURL=style.css.map */
 
 
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-  .switch {
-    align-self: flex-end;
-    margin: 0.9375rem;
+
+.switch {
+  align-self: flex-end;
+  margin: 0.9375rem;
 }
 .inner-switch {
-    display: inline-block;
-    cursor: pointer;
-    border: 1px solid #555;
-    border-radius: 1.25rem;
-    width: 3.125rem;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0.1875rem;
-    margin-left: 0.3125rem;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #555;
+  border-radius: 1.25rem;
+  width: 3.125rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.1875rem;
+  margin-left: 0.3125rem;
 }
+
