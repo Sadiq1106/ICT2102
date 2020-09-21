@@ -2250,4 +2250,20 @@ section {
 
 .footer_nav_item a:hover {
     color: #FFFFFF;
-} */
+} 
+
+
+.login100-form-title {
+    font-family: Rubik;
+    font-size: 30px;
+    
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: block;
+   
+}
+
+
+
+
