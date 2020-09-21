@@ -59,9 +59,9 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a  href="#html">Flights</a></li>
-                                            <li><a href="#">Hotel</a></li>
-                                            <li><a href="#">AR Guide</a></li>                                
+                                            <li><a  href="flights.html">Flights</a></li>
+                                            <li><a href="hotel.html">Hotel</a></li>
+                                            <li><a href="arguide.html">AR Guide</a></li>                                
                                             <li><a class="active" href="login.html">Login</a></li>
                                         </ul>
                                     </nav>
@@ -101,6 +101,8 @@
 	
 	<div class="page-content">
 		<div class="form-v8-content">
+
+			<!--window animation START-->
 			<div class="form-left">
                 <div class="box">
 					<svg id="lettravel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
@@ -298,7 +300,6 @@
 							<rect class="s-gls" x="252.81" y="359.33" width="32.67" height="6.05" rx="3.03" fill="#ffca70" />
 							<rect class="s-gls" x="267.66" y="368.4" width="32.67" height="6.05" rx="3.03" fill="#ffca70" />
 						  </g>
-				  
 						</g>
 					  </g>
 					  <g id="morning">
@@ -336,11 +337,11 @@
 						<rect x="281.5" y="134.5" width="237" height="321" rx="115.4" fill="none" stroke="#e5e5e6" stroke-miterlimit="10" stroke-width="16" />
 					  </g>
 					</svg>
-				  
 				  </div>
 				  <script src="js/test.js"></script>
                 </div>
-	
+	<!--window animation END-->
+
 			<div class="form-right">
 				<div class="tab">
 					<div class="tab-inner">
@@ -350,32 +351,33 @@
 						<button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
 					</div>
 				</div>
-				<form class="form-detail" action="#" method="post">
+			<!--START OF SIGN UP-->
+				<form class="form-detail" action="register.html" method="post">
 					<div class="tabcontent" id="sign-up">
 						<div class="form-row">
 							<label class="form-row-inner">
-								<input type="text" name="full_name" id="full_name" class="input-text" required>
+								<input type="text" name="full_name" id="full_name" class="input-text" >
 								<span class="label">Username</span>
 		  						<span class="border"></span>
 							</label>
 						</div>
 						<div class="form-row">
 							<label class="form-row-inner">
-								<input type="text" name="your_email" id="your_email" class="input-text" required>
+								<input type="text" name="email_register" id="email_register" class="input-text" >
 								<span class="label">E-mail</span>
 		  						<span class="border"></span>
 							</label>
 						</div>
 						<div class="form-row">
 							<label class="form-row-inner">
-								<input type="password" name="password" id="password" class="input-text" required>
+								<input type="password" name="password_register" id="password_register" class="input-text" >
 								<span class="label">Password</span>
 								<span class="border"></span>
 							</label>
 						</div>
 						<div class="form-row">
 							<label class="form-row-inner">
-								<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" required>
+								<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" >
 								<span class="label">Comfirm Password</span>
 								<span class="border"></span>
 							</label>
@@ -385,38 +387,28 @@
 						</div>
 					</div>
 				</form>
-				<form class="form-detail" action="#" method="post">
+				<!--END OF SIGN UP-->
+
+				<!--START OF SIGN IN-->
+				<form class="form-detail" action="myBookings.html" method="post">
 					<div class="tabcontent" id="sign-in">
-						<!-- <div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="full_name_1" id="full_name_1" class="input-text" required>
-								<span class="label">Username</span>
-		  						<span class="border"></span>
-							</label>
-						</div> -->
 						<div class="form-row">
 							<label class="form-row-inner">
-								<input type="text" name="your_email_1" id="your_email_1" class="input-text" required>
+								<input type="text" name="email" id="email" class="input-text" >
 								<span class="label">E-mail</span>
 		  						<span class="border"></span>
 							</label>
 						</div>
 						<div class="form-row">
 							<label class="form-row-inner">
-								<input type="password" name="password_1" id="password_1" class="input-text" required>
+								<input type="password" name="password" id="password" class="input-text" >
 								<span class="label">Password</span>
 								<span class="border"></span>
 							</label>
 						</div>
-						<!-- <div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="comfirm_password_1" id="comfirm_password_1" class="input-text" required>
-								<span class="label">Comfirm Password</span>
-								<span class="border"></span>
-							</label>
-						</div> -->
+
 						<div class="form-row-last">
-							<input type="submit" name="register" class="register" value="Sign In">
+							<input type="submit" name="signin" class="register" value="Sign In">
 						</div>
 					</div>
 				</form>
@@ -424,7 +416,7 @@
 		</div>
 	</div>
 	
-	<!-- Modal -->
+	<!-- Modal Search-->
     <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -436,8 +428,6 @@
 		</div>
 	</div>
   
-
-
 	<!--JS-->
 	<script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -491,5 +481,5 @@
 		 });
    
 	 </script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>
