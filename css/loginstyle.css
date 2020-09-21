@@ -4,9 +4,13 @@ body {
 .page-content {
 	width: 100%;
 	margin:  0 auto;
-	background-image: -moz-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
-    background-image: -webkit-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
-    background-image: -ms-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
+	background-image: -moz-linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+    background-image: -webkit-linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+	background-image: -ms-linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+
+
+
+
 	display: flex;
 	display: -webkit-flex;
 	justify-content: center;
@@ -42,6 +46,8 @@ body {
 }
 .form-v8-content .form-left {
 	margin-bottom: -4px;
+	height:100%;
+	width:100%;
 }
 .form-v8-content .form-left img {
 	border-top-left-radius: 8px;
