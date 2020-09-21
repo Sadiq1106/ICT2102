@@ -1,127 +1,979 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-          <meta charset="utf-8" />
-        <!-- SEO stuff-->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>travelAR</title>
-        <!-- google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- bootstrap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous">
-        
-        
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-       <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark py-3" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">travelAR</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Sign in</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Create Account</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Flights</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Hotels</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">AR Guide</a></li>
-                    </ul>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>travelAR</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" type="text/css" href="css/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JS here -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</head>
+
+<body>
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div>
+                                    <a href="index.html">
+                                        <p> travelAR</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="login.html">Flights</a></li>
+                                            <li><a href="#">Hotel</a></li>
+                                            <li><a href="#">AR Guide</a></li>
+                                       
+                                            <!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="destination_details.html">Destinations details</a></li>
+                                                    <li><a href="elements.html">elements</a></li>
+                                                </ul>
+                                            </li> -->
+                                         
+                                            <li><a href="login.html">Login</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                                <div class="social_wrap d-flex align-items-center justify-content-end">
+                                    <div class="number">
+                                        <p> <i class="fa fa-phone"></i> +65 9999 9999</p>
+                                    </div>
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                            <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="seach_icon">
+                                <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </nav>
+        </div>
+    </header>
+    <!-- header-end -->
 
-
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center text-center">
-                   <form class="needs-validation travelform" novalidate>
-                      
-                      <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                          <label for="validationCustom03">From</label>
-                          <input type="text" class="form-control" id="validationCustom03" placeholder="Singapore (Any)" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid city.
-                          </div>
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3>Japan</h3>
+                                <p>Pixel perfect design with awesome contents</p>
+                                <a href="#" class="boxed-btn3">Explore Now</a>
+                            </div>
                         </div>
-                        <div class="col-md-4 mb-3">
-                          <label for="validationCustom04">To</label>
-                          <input type="text" class="form-control" id="validationCustom04" placeholder="Country, city or airport" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid city.
-                          </div>
-                        </div>
-                        <div class="col-md-2 mb-3">
-                          <label for="validationCustom05">Depart</label>
-                          <input type="text" class="form-control" id="validationCustom05" placeholder="25/09/2020" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid date.
-                          </div>
-                        </div><div class="col-md-2 mb-3">
-                          <label for="validationCustom05">Return</label>
-                          <input type="text" class="form-control" id="validationCustom05" placeholder="28/09/2020" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid date.
-                          </div>
-                        </div>
-                      </div>
-                       
-                     
-                      <button class="btn btn-primary" type="submit">Start Planning!</button>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </header>
+            <div class="single_slider  d-flex align-items-center slider_bg_2 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3>Australia</h3>
+                                <p>Pixel perfect design with awesome contents</p>
+                                <a href="#" class="boxed-btn3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_3 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3>Switzerland</h3>
+                                <p>Pixel perfect design with awesome contents</p>
+                                <a href="#" class="boxed-btn3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-         <!-- Services-->
-        <section class="page-section" id="services">
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- search_start  -->
+    <div class="search">
+
+
+        <!-- Search Contents -->
+
+        <div class="container fill_height">
+            <div class="row fill_height">
+                <div class="col fill_height">
+
+                    <!-- Search Tabs -->
+
+                    <div class="search_tabs_container">
+                        <div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                            <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start active"><img src="img/suitcase.png" alt=""><span>hotels</span></div>
+                           
+                            <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="img/departure.png" alt="">flights</div>
+
+                            <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="img/diving.png" alt="">activities</div>
+                        </div>
+                    </div>
+
+                    <!-- Search Panel -->
+
+                    <div class="search_panel active">
+                        <form action="#" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                            <div class="search_item">
+                                <div>destination</div>
+                                <input type="text" class="destination search_input" required="required">
+                            </div>
+                            <div class="search_item">
+                                <div>check in</div>
+                                <input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>check out</div>
+                                <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>adults</div>
+                                <select name="adults" id="adults_1" class="dropdown_item_select search_input">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <div class="search_item">
+                                <div>children</div>
+                                <select name="children" id="children_1" class="dropdown_item_select search_input">
+                                    <option>0</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <button class="button search_button">search<span></span><span></span><span></span></button>
+                        </form>
+                    </div>
+
+                    <!-- Search Panel -->
+
+                    <div class="search_panel">
+                        <form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                            <div class="search_item">
+                                <div>destination</div>
+                                <input type="text" class="destination search_input" required="required">
+                            </div>
+                            <div class="search_item">
+                                <div>check in</div>
+                                <input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>check out</div>
+                                <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>adults</div>
+                                <select name="adults" id="adults_2" class="dropdown_item_select search_input">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <div class="search_item">
+                                <div>children</div>
+                                <select name="children" id="children_2" class="dropdown_item_select search_input">
+                                    <option>0</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <button class="button search_button">search<span></span><span></span><span></span></button>
+                        </form>
+                    </div>
+
+                    <!-- Search Panel -->
+
+                    <div class="search_panel">
+                        <form action="#" id="search_form_3" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                            <div class="search_item">
+                                <div>destination</div>
+                                <input type="text" class="destination search_input" required="required">
+                            </div>
+                            <div class="search_item">
+                                <div>check in</div>
+                                <input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>check out</div>
+                                <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>adults</div>
+                                <select name="adults" id="adults_3" class="dropdown_item_select search_input">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <div class="search_item">
+                                <div>children</div>
+                                <select name="children" id="children_3" class="dropdown_item_select search_input">
+                                    <option>0</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <button class="button search_button">search<span></span><span></span><span></span></button>
+                        </form>
+                    </div>
+
+                    <!-- Search Panel -->
+
+                    <div class="search_panel">
+                        <form action="#" id="search_form_4" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                            <div class="search_item">
+                                <div>destination</div>
+                                <input type="text" class="destination search_input" required="required">
+                            </div>
+                            <div class="search_item">
+                                <div>check in</div>
+                                <input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>check out</div>
+                                <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>adults</div>
+                                <select name="adults" id="adults_4" class="dropdown_item_select search_input">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <div class="search_item">
+                                <div>children</div>
+                                <select name="children" id="children_4" class="dropdown_item_select search_input">
+                                    <option>0</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <button class="button search_button">search<span></span><span></span><span></span></button>
+                        </form>
+                    </div>
+
+                    <!-- Search Panel -->
+
+                    <div class="search_panel">
+                        <form action="#" id="search_form_5" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                            <div class="search_item">
+                                <div>destination</div>
+                                <input type="text" class="destination search_input" required="required">
+                            </div>
+                            <div class="search_item">
+                                <div>check in</div>
+                                <input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>check out</div>
+                                <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>adults</div>
+                                <select name="adults" id="adults_5" class="dropdown_item_select search_input">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <div class="search_item">
+                                <div>children</div>
+                                <select name="children" id="children_5" class="dropdown_item_select search_input">
+                                    <option>0</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <button class="button search_button">search<span></span><span></span><span></span></button>
+                        </form>
+                    </div>
+
+                    <!-- Search Panel -->
+
+                    <div class="search_panel">
+                        <form action="#" id="search_form_6" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                            <div class="search_item">
+                                <div>destination</div>
+                                <input type="text" class="destination search_input" required="required">
+                            </div>
+                            <div class="search_item">
+                                <div>check in</div>
+                                <input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>check out</div>
+                                <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="search_item">
+                                <div>adults</div>
+                                <select name="adults" id="adults_6" class="dropdown_item_select search_input">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <div class="search_item">
+                                <div>children</div>
+                                <select name="children" id="children_6" class="dropdown_item_select search_input">
+                                    <option>0</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                </select>
+                            </div>
+                            <button class="button search_button">search<span></span><span></span><span></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search_end  -->
+
+<!-- dark mode start-->
+    <div class="switch">Dark mode:              
+        <span class="inner-switch" onclick="myFunction()">OFF</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+<!-- dark mode end -->
+
+    <!-- popular_destination_area_start  -->
+    <div class="popular_destination_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>Popular Destination</h3>
+                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="img/destination/1.png" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Italy <a href="travel_destination.html"> 07 Places</a> </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="img/destination/2.png" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Brazil <a href="travel_destination.html"> 03 Places</a> </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="img/destination/3.png" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">America <a href="travel_destination.html"> 10 Places</a> </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="img/destination/4.png" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Nepal <a href="travel_destination.html"> 02 Places</a> </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="img/destination/5.png" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Maldives <a href="travel_destination.html"> 02 Places</a> </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="img/destination/6.png" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Indonesia <a href="travel_destination.html"> 05 Places</a> </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popular_destination_area_end  -->
+
+        <!-- newletter_area_start  -->
+        <div class="newletter_area overlay">
             <div class="container">
-                <h2 class="text-center mt-0">Travel with Ease!</h2>
-                <hr class="divider my-4" />
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-10">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5">
+                                <div class="newsletter_text">
+                                    <h4>Subscribe Our Newsletter</h4>
+                                    <p>Subscribe newsletter to get offers and about
+                                        new places to discover.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="mail_form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-9 col-md-8">
+                                            <div class="newsletter_field">
+                                                <input type="email" placeholder="Your mail">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4">
+                                            <div class="newsletter_btn">
+                                                <button class="boxed-btn4 " type="submit">Subscribe</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- newletter_area_end  -->
+
+        <div class="popular_places_area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section_title text-center mb_70">
+                            <h3>Popular Places</h3>
+                            <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <img src="assets/icons/man.png" alt="Responsive image" class="aboutimg">
-                            <h3 class="h4 mb-2">Our Plan</h3>
-                            <p class="text-muted mb-0">Our complex AI driven algorithms find the best attractions</p>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_place">
+                            <div class="thumb">
+                                <img src="img/place/1.png" alt="">
+                                <a href="#" class="prise">$500</a>
+                            </div>
+                            <div class="place_info">
+                                <a href="destination_details.html">
+                                    <h3>California</h3>
+                                </a>
+                                <p>United State of America</p>
+                                <div class="rating_days d-flex justify-content-between">
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <a href="#">(20 Review)</a>
+                                    </span>
+                                    <div class="days">
+                                        <i class="fa fa-clock-o"></i>
+                                        <a href="#">5 Days</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <img src="assets/icons/political.png" alt="Responsive image" class="aboutimg">
-                            <h3 class="h4 mb-2">Lowest Prices</h3>
-                            <p class="text-muted mb-0">Our real time web scraper allows us to always find the lowest ticket and booking prices</p>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_place">
+                            <div class="thumb">
+                                <img src="img/place/2.png" alt="">
+                                <a href="#" class="prise">$500</a>
+                            </div>
+                            <div class="place_info">
+                                <a href="destination_details.html">
+                                    <h3>Korola Megna</h3>
+                                </a>
+                                <p>United State of America</p>
+                                <div class="rating_days d-flex justify-content-between">
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <a href="#">(20 Review)</a>
+                                    </span>
+                                    <div class="days">
+                                        <i class="fa fa-clock-o"></i>
+                                        <a href="#">5 Days</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <img src="assets/icons/worldwide.png" alt="Responsive image" class="aboutimg">
-                            <h3 class="h4 mb-2">Tailored for you</h3>
-                            <p class="text-muted mb-0">Our easy to use system tailors the trip exactly to your specifications</p>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_place">
+                            <div class="thumb">
+                                <img src="img/place/3.png" alt="">
+                                <a href="#" class="prise">$500</a>
+                            </div>
+                            <div class="place_info">
+                                <a href="destination_details.html">
+                                    <h3>London</h3>
+                                </a>
+                                <p>United State of America</p>
+                                <div class="rating_days d-flex justify-content-between">
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <a href="#">(20 Review)</a>
+                                    </span>
+                                    <div class="days">
+                                        <i class="fa fa-clock-o"></i>
+                                        <a href="#">5 Days</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <img src="assets/icons/building.png" alt="Responsive image" class="aboutimg">
-                            <h3 class="h4 mb-2">AR Cities</h3>
-                            <p class="text-muted mb-0">Our virtual tour guide allows you to view tourist locations near you in augumented reality.</p>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_place">
+                            <div class="thumb">
+                                <img src="img/place/4.png" alt="">
+                                <a href="#" class="prise">$500</a>
+                            </div>
+                            <div class="place_info">
+                                <a href="destination_details.html">
+                                    <h3>Miami Beach</h3>
+                                </a>
+                                <p>United State of America</p>
+                                <div class="rating_days d-flex justify-content-between">
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <a href="#">(20 Review)</a>
+                                    </span>
+                                    <div class="days">
+                                        <i class="fa fa-clock-o"></i>
+                                        <a href="#">5 Days</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_place">
+                            <div class="thumb">
+                                <img src="img/place/5.png" alt="">
+                                <a href="#" class="prise">$500</a>
+                            </div>
+                            <div class="place_info">
+                                <a href="destination_details.html">
+                                    <h3>California</h3>
+                                </a>
+                                <p>United State of America</p>
+                                <div class="rating_days d-flex justify-content-between">
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <a href="#">(20 Review)</a>
+                                    </span>
+                                    <div class="days">
+                                        <i class="fa fa-clock-o"></i>
+                                        <a href="#">5 Days</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_place">
+                            <div class="thumb">
+                                <img src="img/place/6.png" alt="">
+                                <a href="#" class="prise">$500</a>
+                            </div>
+                            <div class="place_info">
+                                <a href="destination_details.html">
+                                    <h3>Saintmartine Iceland</h3>
+                                </a>
+                                <p>United State of America</p>
+                                <div class="rating_days d-flex justify-content-between">
+                                    <span class="d-flex justify-content-center align-items-center">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <a href="#">(20 Review)</a>
+                                    </span>
+                                    <div class="days">
+                                        <i class="fa fa-clock-o"></i>
+                                        <a href="#">5 Days</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="more_place_btn text-center">
+                            <a class="boxed-btn4" href="#">More Places</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- footer-->
-        <footer class="py-5" id="mainFooter">
-            <div class="container"><div class="small text-center">Copyright © 2020 - SIT Jia En Qiao Xin Linus Sadiq Ian ICT 2102</div></div>
+        </div>
+
+
+        <div class="video_area video_bg overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="video_wrap text-center">
+                            <h3>Enjoy Video</h3>
+                            <div class="video_icon">
+                                <a class="popup-video video_play_button" href="https://www.youtube.com/watch?v=f59dDEk57i0">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="travel_variation_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_travel text-center">
+                            <div class="icon">
+                                <img src="img/icons/man.png" alt="man" style="width: 50%;">
+                            </div>
+                            <h3>Our Plan</h3>
+                            <p>Our complex AI driven algorithms find the best attractions</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_travel text-center">
+                            <div class="icon">
+                                <img src="img/icons/political.png" alt="" style="width: 50%;">
+                            </div>
+                            <h3>Lowest Prices</h3>
+                            <p>Our real time web scraper allows us to always find the lowest ticket and booking prices</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_travel text-center">
+                            <div class="icon">
+                                <img src="img/icons/worldwide.png" alt="" style="width: 50%;">
+                            </div>
+                            <h3>Tailored for you</h3>
+                            <p>Our easy to use system tailors the trip exactly to your specifications</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_travel text-center">
+                            <div class="icon">
+                                <img src="img/icons/building.png" alt="" style="width: 50%;">
+                            </div>
+                            <h3>AR Cities</h3>
+                            <p>Our virtual tour guide allows you to view tourist locations near you in augumented reality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-lg-4 ">
+                            <div class="footer_widget">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <h3 class="footer_title">travelAR</h3>
+                                    </a>
+                                </div>
+                                <p>Singapore Insititute of Technology <br> Singapore <br>
+                                    <p>+65 9999 9999</p> <br>
+                                    <p>ict2102@gmail.com</p>
+                                </p>
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-pinterest"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-youtube-play"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-6 col-lg-2">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Company
+                                </h3>
+                                <ul class="links">
+                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#"> Gallery</a></li>
+                                    <li><a href="#"> Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Popular destination
+                                </h3>
+                                <ul class="links double_links">
+                                    <li><a href="#">Indonesia</a></li>
+                                    <li><a href="#">America</a></li>
+                                    <li><a href="#">India</a></li>
+                                    <li><a href="#">Switzerland</a></li>
+                                    <li><a href="#">Italy</a></li>
+                                    <li><a href="#">Canada</a></li>
+                                    <li><a href="#">Franch</a></li>
+                                    <li><a href="#">England</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Instagram
+                                </h3>
+                                <div class="instagram_feed">
+                                    <div class="single_insta">
+                                        <a href="#">
+                                            <img src="img/instagram/1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="single_insta">
+                                        <a href="#">
+                                            <img src="img/instagram/2.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="single_insta">
+                                        <a href="#">
+                                            <img src="img/instagram/3.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="single_insta">
+                                        <a href="#">
+                                            <img src="img/instagram/4.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="single_insta">
+                                        <a href="#">
+                                            <img src="img/instagram/5.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="single_insta">
+                                        <a href="#">
+                                            <img src="img/instagram/6.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="footer_border"></div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <p class="copy_right text-center">
+                               
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+
+                                </script> ICT 2102 | Ian | Sadiq | Jia En | Qiao Xin | Linus </a>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
-        <!-- bootstrap core JS-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    </body>
+
+
+        <!-- Modal -->
+        <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="serch_form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit">search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- link that opens popup -->
+        <!--     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script> -->
+        <!-- JS here -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="plugins/easing/easing.js"></script>
+
+
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+
+
+        <script src="js/main.js"></script>
+        <script>
+            $('#datepicker').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                    rightIcon: '<span class="fa fa-caret-down"></span>'
+                }
+            });
+
+        </script>
+</body>
+
 </html>
