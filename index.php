@@ -117,7 +117,7 @@
                         <img src="img/departure.png" alt="">flights
                         </button>
                         <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event,'Hotels')">
-                        <img src="img/suitcase.png" alt="">Hotels
+                        <img src="img/suitcase.png" alt="">Accomodations
                         </button>
                         <button onclick="openPage('dest', this)" style="display:none;"></button>
                         <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event,'Activities')">

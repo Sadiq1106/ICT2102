@@ -3,6 +3,11 @@
 {
    float: right;
 }
+#navigation
+{
+   left: 400px;
+   position: relative;
+}
 </style>
 
    <div class="header-area ">
@@ -12,19 +17,22 @@
                <div class="row align-items-center">
                   <div class="col-xl-2 col-lg-2">
                      <div>
-                        <a href="index.php">
-                           <p>ezTravel</p>
+                        <a href="index.php" class="pull-left">
+                        <img src="img/logo.png" style="width: 70px;">
                         </a>
                      </div>
                   </div>
-
-                  <div class="col-xl-8 col-lg-8">
+                  <div class="col-xl-6 col-lg-6">
                      <div class="main-menu  d-none d-lg-block">
                         <nav>
                          <?php
 
                 if (isset($_SESSION['MM_Username'])) { ?>
-                           <ul id="navigation">
+                          <ul id="navigation">
+                    <li><a class="active" href="populardest.php">Popular Destination</a></li>
+                    <li><a class="active" href="placesofinterest.php">Places of Interest</a></li>
+                    <li><a class="active" href="./login.php">Login</a></li>
+                </ul>
                            <li><a class="active"  href="placesofinterest.php">Places of Interest</a></li>
                               <li><a class="active"  href="arguide.php">AR Guide</a></li>
                             
