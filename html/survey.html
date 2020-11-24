@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>ezTravel</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/sumikko.png">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					
+					<div class="codrops-top">
+						<a href="index.html"><h1 class="codrops-icon codrops-icon-prev"> Click here to exit survey</h1></a>
+
+					</div>
+				</div>
+
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+					<ol class="fs-fields">
+					   <li>
+						  <label class="fs-field-label fs-anim-upper" for="q1">Where do you want to go?</label>
+						  <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Enter a country you wish to visit" />
+					   </li>
+					   <li>
+						  <label class="fs-field-label fs-anim-upper" for="q2">Start Date:</label>
+						  <input class="fs-mark fs-anim-lower" id="q2" name="q2" type="datetime-local" />
+							 <br/>
+						  <label class="fs-field-label fs-anim-upper" for="q2">End Date:</label>
+						  <input class="fs-mark fs-anim-lower" id="q2" name="q2" type="datetime-local" />
+					   </li>
+					   <li>
+						  <label class="fs-field-label fs-anim-upper" for="q3">No of pax</label>
+						  <input class="fs-mark fs-anim-lower" id="q3" name="q3" type="number" placeholder="1" step="1" min="1" />
+					   </li>
+					  
+		  
+					   <li data-input-trigger>
+						  <label class="fs-field-label fs-anim-upper" for="q7" data-info="This will help us know what kind of service you need">Preferences</label>
+						  <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							 <span><input id="q5a" name="q5" type="checkbox" value="wateractivity"/><label for="q5a" class="radio-water">Water Activities</label></span>
+							 <span><input id="q5b" name="q5" type="checkbox" value="scenic"/><label for="q5b" class="radio-scenic">Scenic Places</label></span>
+							 <span><input id="q5c" name="q5" type="checkbox" value="cafe"/><label for="q5c" class="radio-cafe">Cafe Places</label></span>
+							 <span><input id="q5d" name="q5" type="checkbox" value="wildlife"/><label for="q5d" class="radio-wildlife">Wildlife</label></span>
+							 <span><input id="q5e" name="q5" type="checkbox" value="hiking"/><label for="q5e" class="radio-hiking">Hiking</label></span>
+							 <span><input id="q5f" name="q5" type="checkbox" value="beach"/><label for="q5f" class="radio-beach">Beach Lounging</label></span>
+							 <span><input id="q5g" name="q5" type="checkbox" value="foodie"/><label for="q5g" class="radio-foodie">Foodie</label></span>
+							 <span><input id="q5h" name="q5" type="checkbox" value="nightlife"/><label for="q5h" class="radio-nightlife">Nightlife</label></span>
+							 
+						  </div>
+					   </li>
+	 
+					
+					</ol>
+					<!-- /fs-fields -->
+					<button class="fs-submit" type="button" onclick="location.href='flights.html'">Send answers</button>
+				 </form>
+				 <!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+		</div><!-- /container -->
+
+		<script src="js/classie.js"></script>
+		<script src="js/selectFx.js"></script>
+		<script src="js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+	</body>
+</html>
