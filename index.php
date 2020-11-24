@@ -142,11 +142,7 @@
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <select name="adults" id="adults_2" class="dropdown_item_select search_input">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                           </select>
+                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30">
                         </div>
                         <button class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
@@ -169,11 +165,7 @@
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <select name="adults" id="adults_1" class="dropdown_item_select search_input">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                           </select>
+                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30">
                         </div>
                         <button class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
@@ -196,11 +188,7 @@
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <select name="adults" id="adults_3" class="dropdown_item_select search_input">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                           </select>
+                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30">
                         </div>
                         <button type="submit" class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
