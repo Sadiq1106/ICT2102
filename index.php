@@ -4,7 +4,7 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>ezTravel</title>
+      <title>EZTravel</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->    
@@ -134,17 +134,18 @@
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="datet" class="check_in search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate' class="check_in search_input" placeholder="YYYY-MM-DD">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate' class="check_out search_input" placeholder="YYYY-MM-DD">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
                            <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30">
                         </div>
                         <button class="button search_button">search<span></span><span></span><span></span></button>
+                        <button type="button search_button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
                      </form>
                   </div>
                   <!-- end FLIGHTS Search Panel -->
@@ -157,11 +158,11 @@
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate' class="check_in search_input" placeholder="YYYY-MM-DD">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate' class="check_out search_input" placeholder="YYYY-MM-DD">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
@@ -180,11 +181,11 @@
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate' class="check_in search_input" placeholder="YYYY-MM-DD">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate' class="check_out search_input" placeholder="YYYY-MM-DD">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
@@ -503,6 +504,9 @@
              }
          });
       </script>
+<script>
+document.getElementById("myDate").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+</script>
       </div>
    </body>
 </html>

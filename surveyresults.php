@@ -1,193 +1,180 @@
 <!DOCTYPE html>
 <html>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <link rel="stylesheet" href="css/owl.carousel.min.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-   <link rel="stylesheet" href="css/font-awesome.min.css">
-   <link rel="stylesheet" href="css/themify-icons.css">
-   <link rel="stylesheet" type="text/css" href="css/main_styles.css">
-   <link rel="stylesheet" type="text/css" href="css/responsive.css">
-   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <style>
-      * {
-      box-sizing: border-box;
-      }
-      body {
-      background-color: #2193b0;
-      }
-      #regForm {
-      background-color: #ffffff;
-      margin: 100px auto;
-      font-family: Raleway;
-      padding: 40px;
-      width: 70%;
-      min-width: 300px;
-      }
-      h1 {
-      text-align: center;  
-      }
-      input {
-      padding: 10px;
-      /* width: 100%; */
-      font-size: 17px;
-      margin: 20px !important;
-      font-family: Raleway;
-      border: 1px solid #aaaaaa;
-      }
-      /* Mark input boxes that gets an error on validation: */
-      input.invalid {
-      background-color: #ffdddd;
-      }
-      /* Hide all steps by default: */
-      .tab {
-      display: none;
-      }
-      button {
-      background-color: #2193b0;
-      color: #ffffff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 17px;
-      font-family: Raleway;
-      cursor: pointer;
-      }
-      button:hover {
-      opacity: 0.8;
-      }
-      #prevBtn {
-      background-color: #bbbbbb;
-      }
-      /* Make circles that indicate the steps of the form: */
-      .step {
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbbbbb;
-      border: none;  
-      border-radius: 50%;
-      display: inline-block;
-      opacity: 0.5;
-      }
-      .step.active {
-      opacity: 1;
-      }
-      /* Mark the steps that are finished and valid: */
-      .step.finish {
-      background-color: #4CAF50;
-      }
-      .popular_places_area{
-      background-color: white;
-      padding-bottom: 50px;
-      padding-top: 50px;
-      }
-   </style>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/magnific-popup.css">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/themify-icons.css">
+      <link rel="stylesheet" type="text/css" href="css/main_styles.css">
+      <link rel="stylesheet" type="text/css" href="css/responsive.css">
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/hover-box.css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <style>
+         * {
+         box-sizing: border-box;
+         }
+         body {
+         background-color: #2193b0;
+         }
+         #regForm {
+         background-color: #ffffff;
+         margin: 100px auto;
+         margin-top: 0px;
+         margin-bottom: 0px;
+         font-family: Raleway;
+         padding: 40px;
+         width: 70%;
+         min-width: 300px;
+         }
+         h1 {
+         text-align: center;  
+         }
+         input {
+         padding: 10px;
+         /* width: 100%; */
+         font-size: 17px;
+         margin: 20px !important;
+         font-family: Raleway;
+         border: 1px solid #aaaaaa;
+         }
+         /* Mark input boxes that gets an error on validation: */
+         input.invalid {
+         background-color: #ffdddd;
+         }
+         /* Hide all steps by default: */
+         .tab {
+         display: none;
+         }
+         button {
+         background-color: #2193b0;
+         color: #ffffff;
+         border: none;
+         padding: 10px 20px;
+         font-size: 17px;
+         font-family: Raleway;
+         cursor: pointer;
+         }
+         button:hover {
+         opacity: 0.8;
+         }
+         #prevBtn {
+         background-color: #bbbbbb;
+         }
+         /* Make circles that indicate the steps of the form: */
+         .step {
+         height: 15px;
+         width: 15px;
+         margin: 0 2px;
+         background-color: #bbbbbb;
+         border: none;  
+         border-radius: 50%;
+         display: inline-block;
+         opacity: 0.5;
+         }
+         .step.active {
+         opacity: 1;
+         }
+         /* Mark the steps that are finished and valid: */
+         .step.finish {
+         background-color: #2193b0;
+         }
+         .popular_places_area{
+         background-color: white;
+         padding-bottom: 50px;
+         padding-top: 50px;
+         }
+      </style>
+   </head>
    <body>
       <form id="regForm" action="surveylogin.php">
-         <!-- One "tab" for each step in the form: -->
          <div class="tab">
             <div class="popular_places_area">
                <div class="row justify-content-center">
                   <div class="col-lg-6">
                      <div class="section_title text-center mb_70">
-                        <h3>Flights</h3>
-                        <p>Sitang Airlines</p>
+                        <h3>Hotel</h3>
+                        <p>Sitang Hotel</p>
                      </div>
                   </div>
                </div>
                <div class="row">
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/sia.png" alt="">
-                           <p class="prise">$800</p>
-                        </div>
                         <div class="place_info">
-                           <h3>Singapore Airlines</h3>
-                           <p>Changi Airport, Singapore</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a>(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a>5 Days</a>
+                           <div class="post-card">
+                              <div class="post-img">
+                                 <img src="img/place/ana.png" style="width:100%;">
+                              </div>
+                              <div class="post-content">
+                                 <h1 class="title">SIN - TYO</h1>
+                                 <h2 class="sub_title">23 Nov 2020 - 24 Nov 2020</h2>
+                                 <p class="description">India is a vast South Asian country with diverse terrain – from Himalayan peaks to Indian Ocean coastline – and history reaching back 5 millennia.</p>
                               </div>
                            </div>
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input  type="radio" id="sia" name="sia" value="sia">
+                        <input required type="radio" id="shang" name="shang" value="shang">
                      </p>
                   </div>
-                  <div class="col-lg-4 col-md-6">
+
+                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/japanair.png" alt="">
-                           <p class="prise">$600</p>
-                        </div>
                         <div class="place_info">
-                           <h3>Japan Airlines</h3>
-                           <p>Narita Airport, Tokyo</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a>(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a>5 Days</a>
+                           <div class="post-card">
+                              <div class="post-img">
+                                 <img src="img/place/ana.png" style="width:100%;">
+                              </div>
+                              <div class="post-content">
+                                 <h1 class="title">SIN - TYO</h1>
+                                 <h2 class="sub_title">23 Nov 2020 - 24 Nov 2020</h2>
+                                 <p class="description">India is a vast South Asian country with diverse terrain – from Himalayan peaks to Indian Ocean coastline – and history reaching back 5 millennia.</p>
                               </div>
                            </div>
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input  type="radio" id="jal" name="jal" value="jal">
+                        <input required type="radio" id="shang" name="shang" value="shang">
                      </p>
                   </div>
-                  <div class="col-lg-4 col-md-6">
+
+                    <div class="col-lg-4 col-md-6">
                      <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/ana.png" alt="">
-                           <p class="prise">$650</p>
-                        </div>
                         <div class="place_info">
-                           <h3>ANA Airlines</h3>
-                           <p>Haneda Airport, Tokyo</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a>(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a>5 Days</a>
+                           <div class="post-card">
+                              <div class="post-img">
+                                 <img src="img/place/ana.png" style="width:100%;">
+                              </div>
+                              <div class="post-content">
+                                 <h1 class="title">SIN - TYO</h1>
+                                 <h2 class="sub_title">23 Nov 2020 - 24 Nov 2020</h2>
+                                 <p class="description">India is a vast South Asian country with diverse terrain – from Himalayan peaks to Indian Ocean coastline – and history reaching back 5 millennia.</p>
                               </div>
                            </div>
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input type="radio" id="ana" name="ana" value="ana">
+                        <input required type="radio" id="shang" name="shang" value="shang">
                      </p>
                   </div>
                </div>
             </div>
+            <script>
+	$(window).load(function() {
+    $('.post-card').hover(function() {
+      $(this).find('.description').stop().animate({
+        height: "toggle",
+        opacity: "toggle"
+      }, 300);
+    });
+  });
+	   </script>
          </div>
          <!-- end of flights tab  -->
          <div class="tab">
@@ -227,7 +214,7 @@
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input required type="radio" id="shang" name="shang" value="shang">
+                        <input required type="radio" id="shang" name="shang" value="shang">
                      </p>
                   </div>
                   <div class="col-lg-4 col-md-6">
@@ -256,7 +243,7 @@
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input required type="radio" id="ritz" name="ritz" value="ritz">
+                        <input required type="radio" id="ritz" name="ritz" value="ritz">
                      </p>
                   </div>
                   <div class="col-lg-4 col-md-6">
@@ -285,7 +272,7 @@
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input required type="radio" id="mandarin" name="mandarin" value="mandarin">
+                        <input required type="radio" id="mandarin" name="mandarin" value="mandarin">
                      </p>
                   </div>
                </div>
@@ -302,7 +289,6 @@
                      </div>
                   </div>
                </div>
-              
                <div class="row">
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
@@ -330,7 +316,7 @@
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input required type="radio" id="fuji" name="fuji" value="fuji">
+                        <input required type="radio" id="fuji" name="fuji" value="fuji">
                      </p>
                   </div>
                   <div class="col-lg-4 col-md-6">
@@ -357,11 +343,10 @@
                               </div>
                            </div>
                         </div>
-                        </div>
-                        <p class="text-center">Book Now:
-                     <input required type="radio" id="hedo" name="hedo" value="hedo">
+                     </div>
+                     <p class="text-center">Book Now:
+                        <input required type="radio" id="hedo" name="hedo" value="hedo">
                      </p>
-                     
                   </div>
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
@@ -389,7 +374,7 @@
                         </div>
                      </div>
                      <p class="text-center">Book Now:
-                     <input required type="radio" id="heartrock" name="heartrock" value="heartrock">
+                        <input required type="radio" id="heartrock" name="heartrock" value="heartrock">
                      </p>
                   </div>
                </div>
@@ -401,7 +386,7 @@
                <div class="row justify-content-center">
                   <div class="col-lg-6">
                      <div class="section_title text-center mb_70">
-                        <h3>Itineary</h3>
+                        <h3>Itinerary</h3>
                      </div>
                   </div>
                </div>
@@ -513,7 +498,6 @@
             <span class="step"></span>
          </div>
       </form>
-
       <script>
          var currentTab = 0; // Current tab is set to be the first tab (0)
          showTab(currentTab); // Display the current tab
