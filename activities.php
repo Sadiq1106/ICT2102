@@ -89,6 +89,11 @@
       </style>
    </head>
    <body>
+   <?php
+        $afrom = $_POST['aFrom'];
+        $ato = $_POST['aTo'];
+        $aquantity = $_POST['aquantity'];
+   ?>
       <?php
          include "./navbar.php";
          ?>
@@ -97,12 +102,6 @@
          define("DBNAME", "sql1902670ian");
          define("DBUSER", "ict1902670ian");
          define("DBPASS", "NAI0762091");
-         ?>
-         <?php 
-         $from = $_POST['FROM'];
-         $to = $_POST['TO'];
-         $quantity = $_POST['quantity'];
-
          ?>
       <!-- slider_area_start -->
       <?php
@@ -119,36 +118,36 @@
                   <!-- Search Tabs -->
                   <div class="search_tabs_container">
                      <div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-                        <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event, 'Flights')"id="defaultOpen" >
+                        <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event, 'Flights')">
                         <img src="img/departure.png" alt="">flights
                         </button>
                         <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event,'Hotels')" >
                         <img src="img/suitcase.png" alt="">Accomodations
                         </button>
                         <button onclick="openPage('dest', this)" style="display:none;"></button>
-                        <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event,'Activities')">
+                        <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event,'Activities')" id="defaultOpen" >
                         <img src="img/diving.png" alt=""> activities
                         </button>
                      </div>
                   </div>
                   <!-- start FLIGHTS Search Panel -->
-                  <div class="search_panel active">
+                  <div class="search_panel">
                      <form action="/ict2102-team14-2020/flights.php" method="post" id="flightssearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
                         <div class="search_item">
                            <div>destination</div>
-                           <input type="text" class="destination search_input" value="Japan" placeholder="Enter Destination" required="required" >
+                           <input type="text" class="destination search_input" value="Japan" placeholder="Enter Destination" required="required">
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" id='myDate' class="check_in search_input" placeholder="YYYY-MM-DD" required="required" value="<?php echo $from ?>" >
+                           <input type="date" id='myDate' name="FROM"class="check_in search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" id='myDate1' class="check_out search_input" placeholder="YYYY-MM-DD" required="required" value ="<?php echo $to?>">
+                           <input type="date" id='myDate1' name="TO" class="check_out search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30" required="required" value ="<?php echo $quantity?>"> 
+                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30" required="required">
                         </div>
                         <button class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
@@ -163,22 +162,22 @@
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" id='myDate2' class="check_in search_input" placeholder="YYYY-MM-DD" required="required" > 
+                           <input type="date" id='myDate2' name="hFrom" class="check_in search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" id='myDate3' class="check_out search_input" placeholder="YYYY-MM-DD" required="required" >
+                           <input type="date" id='myDate3' name="hTo" class="check_out search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30" required="required" >
+                           <input type="number" id="quantity" name="hquantity" class="search_input" min="1" max="30" required="required">
                         </div>
                         <button class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
                   </div>
                   <!-- end HOTEL Search Panel -->
                   <!-- start ACTIVITIES Search Panel -->
-                  <div class="search_panel">
+                  <div class="search_panel active">
                      <form action="/ict2102-team14-2020/activities.php" method="post" id="activitysearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
                         <div class="search_item">
                            <div>destination</div>
@@ -186,15 +185,15 @@
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" id='myDate4' class="check_in search_input" placeholder="YYYY-MM-DD" required="required">
+                           <input type="date" id='myDate4' name="aFrom" class="check_in search_input" placeholder="YYYY-MM-DD" required="required" value="<?php echo $afrom?>">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" id='myDate5' class="check_out search_input" placeholder="YYYY-MM-DD" required="required">
+                           <input type="date" id='myDate5' name="aTo"class="check_out search_input" placeholder="YYYY-MM-DD" required="required" value="<?php echo $ato?>">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30" required="required">
+                           <input type="number" id="quantity" name="aquantity" class="search_input" min="1" max="30" required="required" value="<?php echo $aquantity?>">
                         </div>
                         <button type="submit" class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
@@ -371,7 +370,7 @@
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
                         <div class="thumb">
-                           <img src="<?php echo $data['activ_img'] ?> " alt="" style="width:100%" width="400" height="200"> 
+                           <img src="<?php echo $data['activ_img'] ?> " alt="" style="width:100%" width="400" height="200">
                         </div>
                         <div class="place_info">
                            <a data-toggle="modal" data-target="#myModal">

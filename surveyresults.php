@@ -2,6 +2,7 @@
 <html>
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ezTravel - Survey Results</title>
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -15,6 +16,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="css/hover-box.css"/>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <link rel="stylesheet" href="css/checkbox.css"/>
       <style>
          * {
          box-sizing: border-box;
@@ -87,94 +89,141 @@
          .popular_places_area{
          background-color: white;
          padding-bottom: 50px;
-         padding-top: 50px;
+         padding-top: 0px;
          }
+         .popular_places_area .single_place .place_info {
+    padding: 0px;
+}
+table{
+   text-align: center;
+}
       </style>
    </head>
    <body>
+   <?php
+         define("DBHOST", "rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com");
+         define("DBNAME", "sql1902670ian");
+         define("DBUSER", "ict1902670ian");
+         define("DBPASS", "NAI0762091");
+         ?>
+
       <form id="regForm" action="surveylogin.php">
+         <!-- One "tab" for each step in the form: -->
          <div class="tab">
             <div class="popular_places_area">
                <div class="row justify-content-center">
                   <div class="col-lg-6">
                      <div class="section_title text-center mb_70">
-                        <h3>Hotel</h3>
-                        <p>Sitang Hotel</p>
+                        <h3>Flights</h3>
+                        <p>Sitang Flights</p>
                      </div>
                   </div>
                </div>
+
+               <?php
+                  $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+                  $sql = "select * from flight limit 3";
+                  $mycart = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                  ?>
+
                <div class="row">
+               <?php
+                     while ($data = mysqli_fetch_assoc($mycart)) {
+                         ?>
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
                         <div class="place_info">
                            <div class="post-card">
-                              <div class="post-img">
-                                 <img src="img/place/ana.png" style="width:100%;">
+                              <input class="c-card" type="radio" id="<?php echo $data['flight_id'] ?>" value="<?php echo $data['flight_company'] ?>" name="surveyflights">
+                              <div class="card-content">
+                                 <label for="<?php echo $data['flight_id'] ?>">
+                                    <div class="card-state-icon"></div>
+                                    <div class="post-img">
+                                       <img src="<?php echo $data['flight_img'] ?>" style="width:100%;">
+                                    </div>
+                                    <div class="post-content">
+                                       <table style="width:100%">
+                                          <tr>
+                                             <th>
+                                                <h1 class="title">SIN</h1>
+                                             </th>
+                                             <th>
+                                                <h1 class="title"><i style="font-size:24px" class="fa">&#xf178;</i></h1>
+                                             </th>
+                                             <th>
+                                                <h1 class="title">KIX</h1>
+                                             </th>
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                <?php echo $data['flight_from'] ?></h1>
+                                             </td>
+                                             <td>
+                                                <h2 class="sub_title"> &nbsp;
+                                                </h2>
+                                             </td>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                <?php echo $data['flight_to'] ?></h1>
+                                             </td>
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                <?php echo $data['takeoff_date'] ?></h1>
+                                             </td>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                </h2>
+                                             </td>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                <?php echo $data['expected_touchdown_date'] ?></h1>
+                                             </td>
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                <?php echo $data['takeoff_time'] ?></h1>
+                                             </td>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                </h1>
+                                             </td>
+                                             <td>
+                                                <h2 class="sub_title">
+                                                <?php echo $data['expected_touchdown_time'] ?></h1>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                       <p class="description">Price: <?php echo $data['ticket_price'] ?></p>
+                                       <p class="description">Aircraft Type: <?php echo $data['airbus_model'] ?></p>
+                                       <p class="description"><?php echo $data['terminal'] ?></p>
+                                    </div>
                               </div>
-                              <div class="post-content">
-                                 <h1 class="title">SIN - TYO</h1>
-                                 <h2 class="sub_title">23 Nov 2020 - 24 Nov 2020</h2>
-                                 <p class="description">India is a vast South Asian country with diverse terrain – from Himalayan peaks to Indian Ocean coastline – and history reaching back 5 millennia.</p>
-                              </div>
+                              </label>
                            </div>
                         </div>
                      </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="shang" name="shang" value="shang">
-                     </p>
                   </div>
-
-                   <div class="col-lg-4 col-md-6">
-                     <div class="single_place">
-                        <div class="place_info">
-                           <div class="post-card">
-                              <div class="post-img">
-                                 <img src="img/place/ana.png" style="width:100%;">
-                              </div>
-                              <div class="post-content">
-                                 <h1 class="title">SIN - TYO</h1>
-                                 <h2 class="sub_title">23 Nov 2020 - 24 Nov 2020</h2>
-                                 <p class="description">India is a vast South Asian country with diverse terrain – from Himalayan peaks to Indian Ocean coastline – and history reaching back 5 millennia.</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="shang" name="shang" value="shang">
-                     </p>
-                  </div>
-
-                    <div class="col-lg-4 col-md-6">
-                     <div class="single_place">
-                        <div class="place_info">
-                           <div class="post-card">
-                              <div class="post-img">
-                                 <img src="img/place/ana.png" style="width:100%;">
-                              </div>
-                              <div class="post-content">
-                                 <h1 class="title">SIN - TYO</h1>
-                                 <h2 class="sub_title">23 Nov 2020 - 24 Nov 2020</h2>
-                                 <p class="description">India is a vast South Asian country with diverse terrain – from Himalayan peaks to Indian Ocean coastline – and history reaching back 5 millennia.</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="shang" name="shang" value="shang">
-                     </p>
-                  </div>
+                  <?php
+                     }
+                     mysqli_close($conn);
+                     ?>
                </div>
             </div>
             <script>
-	$(window).load(function() {
-    $('.post-card').hover(function() {
-      $(this).find('.description').stop().animate({
-        height: "toggle",
-        opacity: "toggle"
-      }, 300);
-    });
-  });
-	   </script>
+               $(window).load(function() {
+                $('.post-card').hover(function() {
+                  $(this).find('.description').stop().animate({
+                    height: "toggle",
+                    opacity: "toggle"
+                  }, 300);
+                });
+               });
+               
+            </script>
          </div>
          <!-- end of flights tab  -->
          <div class="tab">
@@ -187,200 +236,101 @@
                      </div>
                   </div>
                </div>
+               <?php
+                  $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+                  $sql = "select * from accommodation limit 3";
+                  $mycart = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                  ?>
                <div class="row">
+               <?php
+                     while ($data = mysqli_fetch_assoc($mycart)) {
+                         ?>
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/shang.png" alt="">
-                           <a class="prise">$800</a>
-                        </div>
                         <div class="place_info">
-                           <h3>Shangri-La Hotel</h3>
-                           <p>Tokyo</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a>(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a>5 Days</a>
+                           <div  class="post-card">
+                              <input class="c-card" type="radio"  id="4" value="<?php echo $data['accom_name'] ?>" name="surveyhotel">
+                              <div class="card-content">
+                                 <label for="4">
+                                    <div class="card-state-icon"></div>
+                                    <div class="post-img">
+                                       <img src="<?php echo $data['accom_pic'] ?>" style="width:100%;">
+                                    </div>
+                                    <div class="post-content">
+                                       <h1 class="title"><?php echo $data['accom_name'] ?></h1>
+                                       <h2 class="sub_title text-center"><?php echo $data['accom_type'] ?></h2>
+                                       <h2 class="sub_title text-center"><?php echo $data['state_name'] ?>, <?php echo $data['state_country'] ?></h2>
+                                       <p class="description">Transportation: <?php echo $data['transport'] ?></p>
+                                       <p class="description"><?php echo $data['accom_details'] ?></p>
+                                       <p class="description">Tags: <?php echo $data['tags'] ?></p>
+                                       
+                                    </div>
                               </div>
+                              </label>
                            </div>
                         </div>
                      </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="shang" name="shang" value="shang">
-                     </p>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/ritz.png" alt="">
-                           <a class="prise">$600</a>
-                        </div>
-                        <div class="place_info">
-                           <h3>The Ritz-Carlton</h3>
-                           <p>Tokyo</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a>(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a >5 Days</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="ritz" name="ritz" value="ritz">
-                     </p>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/mandarin.png" alt="">
-                           <a class="prise">$650</a>
-                        </div>
-                        <div class="place_info">
-                           <h3>Mandarin Oriental</h3>
-                           <p>Tokyo</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a >(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a >5 Days</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="mandarin" name="mandarin" value="mandarin">
-                     </p>
-                  </div>
+                  <?php
+                     }
+                     mysqli_close($conn);
+                     ?>
                </div>
             </div>
          </div>
          <!-- end of accom tab  -->
-         <div class="tab">
+          <!-- start of ROOM tab  -->
+          <div class="tab">
             <div class="popular_places_area">
                <div class="row justify-content-center">
                   <div class="col-lg-6">
                      <div class="section_title text-center mb_70">
-                        <h3>Activities</h3>
-                        <p>Rated 5 stars by Mader Sitang</p>
+                        <h3>Rooms</h3>
+                        <p>Sitang Rooms</p>
                      </div>
                   </div>
                </div>
+               <?php
+                  $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+                  $sql = "select * from room where room_id=7 or room_id=8 or room_id=9";
+                  $mycart = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                  ?>
                <div class="row">
+               <?php
+                     while ($data = mysqli_fetch_assoc($mycart)) {
+                         ?>
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/fuji.png" alt="">
-                           <p class="prise">$100</p>
-                        </div>
                         <div class="place_info">
-                           <h3>Mount Fuji</h3>
-                           <p>Fuji-Hakone-Izu National Park, Japan</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a >(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a >5 Days</a>
+                           <div  class="post-card">
+                              <input class="c-card" type="radio"  id="<?php echo $data['room_id'] ?>" value="<?php echo $data['accom_name'] ?>" name="surveyrooms">
+                              <div class="card-content">
+                                 <label for="<?php echo $data['room_id'] ?>">
+                                    <div class="card-state-icon"></div>
+                                    <div class="post-img">
+                                       <img src="<?php echo $data['room_pic'] ?>" style="width:100%;">
+                                    </div>
+                                    <div class="post-content">
+                                    <h1 class="title"><?php echo $data['room_name'] ?></h1>
+                                       <h2 class="sub_title text-center"><?php echo $data['room_type'] ?></h2>
+                                       <h1 class="sub_title"><?php echo $data['accom_type'] ?></h1>
+                                       <h2 class="description">Availability: <?php echo $data['available_from'] ?> to <?php echo $data['available_to'] ?></h2>
+                                      
+                                    </div>
                               </div>
+                              </label>
                            </div>
                         </div>
                      </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="fuji" name="fuji" value="fuji">
-                     </p>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/hedo.png" alt="">
-                           <p class="prise">$40</p>
-                        </div>
-                        <div class="place_info">
-                           <h3>Cape hedo</h3>
-                           <p>Hedo Kunigami, Okinawa</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a >(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a>5 Days</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="hedo" name="hedo" value="hedo">
-                     </p>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single_place">
-                        <div class="thumb">
-                           <img src="img/place/heartrock.png" alt="">
-                           <p class="prise">FREE</p>
-                        </div>
-                        <div class="place_info">
-                           <h3>Heart Rock</h3>
-                           <p>Kouri Island, Okinawa</p>
-                           <div class="rating_days d-flex justify-content-between">
-                              <span class="d-flex justify-content-center align-items-center">
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i> 
-                              <i class="fa fa-star"></i>
-                              <a >(20 Review)</a>
-                              </span>
-                              <div class="days">
-                                 <i class="fa fa-clock-o"></i>
-                                 <a>5 Days</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <p class="text-center">Book Now:
-                        <input required type="radio" id="heartrock" name="heartrock" value="heartrock">
-                     </p>
-                  </div>
+                  <?php
+                     }
+                     mysqli_close($conn);
+                     ?>
                </div>
             </div>
          </div>
-         <!-- end of accom tab  -->
+         <!-- end of ROOM tab  -->
          <div class="tab">
             <div class="popular_places_area">
                <div class="row justify-content-center">
@@ -483,11 +433,10 @@
                </div>
             </div>
          </div>
-         <!-- end of Itineary tab  -->
          <div style="overflow:auto;">
             <div style="float:right;">
-               <button type="submit" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-               <button type="submit" id="nextBtn" onclick="nextPrev(1)">Next</button>
+               <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+               <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
             </div>
          </div>
          <!-- Circles which indicates the steps of the form: -->
@@ -513,7 +462,7 @@
              document.getElementById("prevBtn").style.display = "inline";
            }
            if (n == (x.length - 1)) {
-             document.getElementById("nextBtn").innerHTML = "Checkout";
+             document.getElementById("nextBtn").innerHTML = "Submit";
            } else {
              document.getElementById("nextBtn").innerHTML = "Next";
            }
@@ -566,7 +515,7 @@
            // This function removes the "active" class of all steps...
            var i, x = document.getElementsByClassName("step");
            for (i = 0; i < x.length; i++) {
-             x[i].className = x[i].className.replace("active", "");
+             x[i].className = x[i].className.replace(" active", "");
            }
            //... and adds the "active" class on the current step:
            x[n].className += " active";

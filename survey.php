@@ -4,7 +4,7 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>ezTravel - Survey </title>
+      <title>EZTravel - Survey </title>
       <link rel="shortcut icon" type="image/x-icon" href="img/sumikko.png">
       <link rel="stylesheet" type="text/css" href="css/normalize.css" />
       <link rel="stylesheet" type="text/css" href="css/demo.css" />
@@ -12,57 +12,65 @@
       <link rel="stylesheet" type="text/css" href="css/cs-select.css" />
       <link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
       <script src="js/modernizr.custom.js"></script>
-
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+      <script>
+        $( function() {
+         var availableTags = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+
+          $( "#dest" ).autocomplete({
+            minlength: 3,
+            source: availableTags,
+            delay: 10
+          });
+          $("#dest").keydown(function(e){
+             if( e.keyCode != $.ui.keyCode.TAB) return; 
+             
+            e.keyCode = $.ui.keyCode.DOWN;
+            $(this).trigger(e);
+
+            e.keyCode = $.ui.keyCode.ENTER;
+            $(this).trigger(e);
+             
+            $(this).siblings("dest").select();
+         });
+        } );
+      </script>
+
    </head>
-
-
    <body>
       <div class="container">
          <div class="fs-form-wrap" id="fs-form-wrap">
             <div class="fs-title">
-               
                <div class="codrops-top">
-               <a href="index.php"><h1 class="codrops-icon codrops-icon-prev"> Click here to exit survey</h1></a>
+                  <a href="index.php">
+                     <h1 style="font-size: 3em;top: -30px;position: relative;"> 
+                     <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                     </button>
+                     </h1>
+                  </a>
                </div>
             </div>
-
             <form action="surveyresults.php" novalidate id="myform" class="fs-form fs-form-full" autocomplete="on">
                <ol class="fs-fields">
-               <!-- destination -->
+                  <!-- destination -->
                   <li>
-                     <label class="fs-field-label fs-anim-upper" for="dest">Where do you want to go?</label>
-                    
-                     <select name="dropdown" id="dropdown">
-                     <?php
-                     define("DBHOST", "rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com");
-                     define("DBNAME", "sql1902670ian");
-                     define("DBUSER", "ict1902670ian");
-                     define("DBPASS", "NAI0762091");
-
-                     $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
-                     $result = mysqli_query($conn,"SELECT * FROM `country`");
-                     while($data = mysqli_fetch_assoc($result)){
-
-    echo("<option value='".$data['country_id']."'>".$data['country_name']."</option>");
-}
-?>
-<label for="dropdown">Select</label>
-</select>
+                     <label class="fs-field-label fs-anim-upper" for="dest">Enter Destination</label>
+                     <input class="fs-anim-lower" id="dest" name="dest" type="text" placeholder="E.g Thailand, Korea" required/>
                   </li>
-                   <!-- start date -->
+                  <!-- start date -->
                   <li>
                      <label class="fs-field-label fs-anim-upper" for="start_date">Start Date:</label>
                      <input  class="fs-mark fs-anim-lower" id="startdate" name="start_date" type="date" required />
-                        <br/>
-                  <!-- end date -->
+                     <br/>
+                     <!-- end date -->
                      <label class="fs-field-label fs-anim-upper" for="end_date">End Date:</label>
                      <input  class="fs-mark fs-anim-lower" id="enddate" name="end_date" type="date" required/>
                   </li>
-
-                   <!-- no of pax -->
+                  <!-- no of pax -->
                   <li>
                      <label class="fs-field-label fs-anim-upper" for="pax">No of pax</label>
                      <input class="fs-mark fs-anim-lower" id="pax" name="pax" type="number" placeholder="1" step="1" min="1" required/>
@@ -79,11 +87,8 @@
                         <span><input required id="q5f" name="beach" type="checkbox" value="beach"/><label for="q5f" class="radio-beach">Beach Lounging</label></span>
                         <span><input required id="q5g" name="foodie" type="checkbox" value="foodie"/><label for="q5g" class="radio-foodie">Foodie</label></span>
                         <span><input required id="q5h" name="nightlife" type="checkbox" value="nightlife"/><label for="q5h" class="radio-nightlife">Nightlife</label></span>
-                        
                      </div>
                   </li>
-
-
                   <!-- Diet preferences -->
                   <li data-input-trigger>
                      <label class="fs-field-label fs-anim-upper" for="q6">Dietary Preferences</label>
@@ -99,7 +104,6 @@
                      <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
                         <span><input required id="q7a" name="oneway" type="radio" value="oneway"/><label for="q7a" class="radio-oneway">One Way</label></span>
                         <span><input required id="q7b" name="twoway" type="radio" value="twoway"/><label for="q7b" class="radio-twoway">Two Way</label></span>
-                        
                      </div>
                   </li>
                   <!-- Accom preferences -->
@@ -108,7 +112,6 @@
                      <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
                         <span><input required id="q8a" name="hotel" type="radio" value="hotel"/><label for="q8a" class="radio-hotel">Hotel</label></span>
                         <span><input required id="q8b" name="hostel" type="radio" value="hostel"/><label for="q8b" class="radio-hostel">Hostel</label></span>
-                        
                      </div>
                   </li>
                </ol>
@@ -143,22 +146,20 @@
          	} );
          })();
       </script>
-  <script >
-    //greyed out dates before today
-    var today = new Date().toISOString().split('T')[0];
-   document.getElementsByName("start_date")[0].setAttribute('min', today);
-
-   //prevent user from selecting date
-   var checkIn = document.getElementById('startdate');
-   var checkOut = document.getElementById('enddate');
-   checkIn.addEventListener('change', updatedate);
-
-   function updatedate() {
-      var firstdate = checkIn.value;
-      checkOut.min = firstdate;
-   }
-</script>
-
-
+      <script >
+         //greyed out dates before today
+         var today = new Date().toISOString().split('T')[0];
+         document.getElementsByName("start_date")[0].setAttribute('min', today);
+         
+         //prevent user from selecting date
+         var checkIn = document.getElementById('startdate');
+         var checkOut = document.getElementById('enddate');
+         checkIn.addEventListener('change', updatedate);
+         
+         function updatedate() {
+           var firstdate = checkIn.value;
+           checkOut.min = firstdate;
+         }
+      </script>
    </body>
 </html>

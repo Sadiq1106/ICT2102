@@ -102,6 +102,7 @@
       <?php
          include "./indexslider.php";
          ?>
+      
       <!-- slider_area_end -->
       <!-- slider_area_end -->
       <!-- search_start  -->
@@ -113,7 +114,7 @@
                   <!-- Search Tabs -->
                   <div class="search_tabs_container">
                      <div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-                        <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start active" onclick="openCity(event, 'Flights')" id="defaultOpen">
+                        <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event, 'Flights')">
                         <img src="img/departure.png" alt="">flights
                         </button>
                         <button class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start" onclick="openCity(event,'Hotels')">
@@ -127,46 +128,45 @@
                   </div>
                   <!-- start FLIGHTS Search Panel -->
                   <div class="search_panel">
-                     <form action="#" method="post" id="flightssearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                     <form action="/ict2102-team14-2020/flights.php" method="post" id="flightssearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
                         <div class="search_item">
                            <div>destination</div>
-                           <input type="text" class="destination search_input" value="japan" placeholder="Enter Destination" required="required">
+                           <input type="text" class="destination search_input" value="Japan" placeholder="Enter Destination" required="required">
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" id='myDate' class="check_in search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate' name = "FROM"class="check_in search_input" placeholder="YYYY-MM-DD" required="required" >
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" id='myDate' class="check_out search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate1' name ="TO" class="check_out search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30">
+                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30" required="required">
                         </div>
                         <button class="button search_button">search<span></span><span></span><span></span></button>
-                        <button type="button search_button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
                      </form>
                   </div>
                   <!-- end FLIGHTS Search Panel -->
                   <!-- start HOTEL Search Panel -->
-                  <div class="search_panel active">
-                     <form action="#" method="post" id="hotelsearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                  <div class="search_panel">
+                     <form action="/ict2102-team14-2020/accomodation.php" method="post" id="hotelsearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
                         <div class="search_item">
                            <div>destination</div>
-                           <input type="text" class="destination search_input" value="japan" required="required">
+                           <input type="text" class="destination search_input" value="Japan" required="required">
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" id='myDate' class="check_in search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate2' name="hFrom" class="check_in search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" id='myDate' class="check_out search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate3' name="hTo"class="check_out search_input" placeholder="YYYY-MM-DD" required="required" >
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30">
+                           <input type="number" id="quantity" name="hquantity" class="search_input" min="1" max="30" required="required">
                         </div>
                         <button class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
@@ -174,22 +174,22 @@
                   <!-- end HOTEL Search Panel -->
                   <!-- start ACTIVITIES Search Panel -->
                   <div class="search_panel">
-                     <form action="#" method="post" id="activitysearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                     <form action="/ict2102-team14-2020/activities.php" method="post" id="activitysearchform" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
                         <div class="search_item">
                            <div>destination</div>
-                           <input type="text" class="destination search_input" value="japan" required="required">
+                           <input type="text" class="destination search_input" value="Japan" required="required">
                         </div>
                         <div class="search_item">
                            <div>from</div>
-                           <input type="date" id='myDate' class="check_in search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate4' name="aFrom" class="check_in search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>to</div>
-                           <input type="date" id='myDate' class="check_out search_input" placeholder="YYYY-MM-DD">
+                           <input type="date" id='myDate5' name="aTo" class="check_out search_input" placeholder="YYYY-MM-DD" required="required">
                         </div>
                         <div class="search_item">
                            <div>No of pax</div>
-                           <input type="number" id="quantity" name="quantity" class="search_input" min="1" max="30">
+                           <input type="number" id="quantity" name="aquantity" class="search_input" min="1" max="30" required="required">
                         </div>
                         <button type="submit" class="button search_button">search<span></span><span></span><span></span></button>
                      </form>
@@ -234,7 +234,7 @@
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
                         <div class="thumb">
-                           <img src="<?php echo $data['flight_img'] ?> " alt="" style="width:100%">
+                           <img src="<?php echo $data['flight_img'] ?> " alt="" style="width:100%" width="400" height="200">
                            <p class="prise">Ticket Price: S$<?php echo $data['ticket_price'] ?></p>
                         </div>
                         <div class="place_info">
@@ -299,7 +299,7 @@
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
                         <div class="thumb">
-                           <img src="<?php echo $data['room_pic'] ?> " alt="" style="width:100%">
+                           <img src="<?php echo $data['room_pic'] ?> " alt="" style="width:100%" width="400" height="200">
                         </div>
                         <div class="place_info">
                            <a data-toggle="modal" data-target="#myModal">
@@ -366,7 +366,7 @@
                   <div class="col-lg-4 col-md-6">
                      <div class="single_place">
                         <div class="thumb">
-                           <img src="<?php echo $data['activ_img'] ?> " alt="" style="width:100%">
+                           <img src="<?php echo $data['activ_img'] ?> " alt="" style="width:100%" width="400" height="200">
                         </div>
                         <div class="place_info">
                            <a data-toggle="modal" data-target="#myModal">
@@ -506,6 +506,11 @@
       </script>
 <script>
 document.getElementById("myDate").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+document.getElementById("myDate1").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+document.getElementById("myDate2").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+document.getElementById("myDate3").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+document.getElementById("myDate4").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+document.getElementById("myDate5").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
 </script>
       </div>
    </body>

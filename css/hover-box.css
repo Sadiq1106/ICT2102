@@ -30,23 +30,23 @@ body {
   text-transform: uppercase;
 }
 
+
+
 .post-card {
   position: relative;
- 
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   background: #fff;
   min-width: 270px;
-  height: 360px;
+  height: 470px;
 }
 
-
-.post-card:hover .post-img,
-.hover .post-img,
-{
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  transform: scale(1.1);
-  opacity: .6;
+.post-card:hover,
+.hover {
+  -webkit-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
 }
+
 
 .post-img{
   height: 400px;
@@ -75,10 +75,10 @@ body {
 
 .post-content {
   position: absolute;
-  bottom: 0;
+  bottom: 35px;
   background: #FFFFFF;
   width: 100%;
-  padding: 15px;
+  padding: 30px;
 }
 
 .category {
@@ -104,7 +104,7 @@ body {
 .sub_title {
   margin: 0;
   padding: 0 0 20px;
-  color: #e74c3c;
+  color:gray;
   font-size: 20px;
   font-weight: 400;
 }
